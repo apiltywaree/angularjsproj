@@ -1,0 +1,65 @@
+<div class="container">
+    <form class="col-md-offset-4 col-md-6" name="form" role="form" novalidate ng-submit="form.$valid">
+        <h1>Admin page</h1>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">First Name:</label>
+            <input type="text" ng-model="person.firstName" required><br/>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Last Name:</label>
+            <input type="text" ng-model="person.lastName" required></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Address:</label>
+            <input type="text" ng-model="person.address" required></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">DOB:</label>
+            <input type="text" ng-model="person.dob" required></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Phone:</label>
+            <input type="text" ng-model="person.phone" required></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Gender:</label>
+            <div style="float:left">
+                <div ng-repeat="gender in genders" class="answerBottomYesNo">
+                    <input type="radio" ng-model="person.gender" ng-value="gender">{{gender}}<br>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <!--<input type="radio" ng-model="person.gender" value="{{genders[0]}}"> Male-->
+            <!--<input type="radio" ng-model="person.gender" value="{{genders[1]}}"> Female-->
+            <!--<input type="radio" ng-model="person.gender" value="{{genders[2]}}"> Other-->
+        </div>
+        <!--<div class="form-group">-->
+        <!--<label class="col-sm-3 control-label">Gender:</label>-->
+        <!--<div ng-repeat="gender in genders">-->
+        <!--<div><input type="radio" ng-model="person.gender" ng-value="gender">-->
+        <!--{{gender}}-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Car:</label>
+            <div ng-repeat="car in cars">
+                <input type="checkbox" ng-model="person.carInterest[car]" ng-value="car">
+                <script></script>
+                {{car}}
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Marital status:</label>
+            <input type="radio" ng-model="person.maritalStatus" value="{{marriage[0]}}"> Single
+            <input type="radio" ng-model="person.maritalStatus" value="{{marriage[1]}}"> Married
+            <input type="radio" ng-model="person.maritalStatus" value="{{marriage[2]}}"> Other
+            <br/></div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label">Country:</label>
+            <select name="country" ng-model="person.country">
+                <option value="">Select Country</option>
+                <option value="usa">USA</option>
+                <option value="nepal">Nepal</option>
+            </select>
+        </div>
+        <button name="submit" ng-click="toggle()" ng-show="form.$valid">SUBMIT</button>
+
+    </form>
+</div>

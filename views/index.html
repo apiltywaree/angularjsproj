@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="/angularjsproj/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <style>
+        .answerBottomYesNo input[type="radio"]{
+            margin-right:5px;
+        }
+    </style>
+</head>
+<body ng-app='app'>
+<div ng-controller='appCtrl'>
+    <!--<ng-include src="'directiveForm.html'"/>-->
+  <!--<input-form></input-form>-->
+    <!--Your first name is {{person.firstName}}<br/>-->
+    <!--Your last name is {{person.lastName}}-->
+
+
+<!--{{display}}-->
+<!--<div class="admin-type" ng-if="display"></div>-->
+<!--<div class="user-type" ng-if="!display"></div>-->
+    <admin-type ng-show="(user==1)?true:false"></admin-type>
+    <user-type ng-show="(user==1)?false:true"></user-type>
+    <!--<admin-type ng-if="(user==1)?true:false"></admin-type>-->
+    <!--<h3>The user Type is {{user}}</h3>-->
+    <!--<user-type ng-if="(user==1)?false:true">-->
+        <!--<h3>The user Type is {{user}}</h3>-->
+    <!--</user-type>-->
+    <!--<button ng-click="toggle()" name="toggle">Toggle Admin</button><br/>-->
+    <!-- <button ng-click="user=(user==1)?2:1" ng-disabled="true" name="toggle">Toggle Admin</button><br/> -->
+</div>
+<script type='text/javascript' src="/angularjsproj/node_modules/angular/angular.js"></script>
+
+<script type='text/javascript' src="/angularjsproj/js/app.js"></script>
+<script type='text/javascript' src="/angularjsproj/js/controller/appController.js"></script>
+<script type="text/javascript" src="/angularjsproj/js/directive/formDirective.js"></script>
+<script type="text/javascript" src="/angularjsproj/js/directive/userType.js"></script>
+<script type="text/javascript" src="/angularjsproj/js/directive/adminType.js"></script>
+</body>
+</html>
